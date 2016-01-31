@@ -2,7 +2,7 @@ var pointsArray = Array.from(document.getElementsByClassName('point'));
 
 var animatePoints = function(points){ 
 
-    pointsElements.forEach(function (element) {
+    pointsArray.forEach(function (element) {
 
     element.style.opacity = 1;
     element.style.transform = "scaleX(1) translateY(0)";
@@ -26,3 +26,4 @@ window.onload = function() {
          }
     });
 }
+
