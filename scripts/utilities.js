@@ -1,17 +1,17 @@
 var pointsElements = document.getElementsByClassName('point');
 
-function forEach(aFunction) {
-    for(i = 0; i < pointsElements.length; i++) {
-    console.log("This is my " + i + " ")
-    aFunction();
+function forEach(aFunction, aArray) {
+    for(i = 0; i < aArray.length; i++) {
+        console.log("This is my " + i + " ")
+        aFunction(i);
     }
 }
 
-function aFunction() {
-   console.log(pointsElements[i].innerText)
+function showPoints(aIndex) {   
+   console.log(pointsElements[aIndex])
 }
 
-forEach(aFunction);
+forEach(showPoints, pointsElements);
 
     
     
