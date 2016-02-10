@@ -151,8 +151,19 @@ var getSongItem = function(element) {
 
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
-
-     songRows.addEventListener('click', findParentByClassName(songRows.children,'album-view-song-item'), false);     
+     
+     //try to convert to array
+     for(j = 0;j < songRows.length; j++) {
+         
+     }
+     
+     for(var row in songRows){
+        row.addEventListener('click', function(event){
+         findParentByClassName(event.target,'album-view-song-item')
+        }, false); 
+     };
+     
+     
      
      count = 0
      individualAlbum[count].addEventListener('click',rotateAlbums);      
