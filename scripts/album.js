@@ -52,7 +52,6 @@ albumSmith = {
 
 ];                        
 
-
 var createSongRow = function(songNumber, songName, songLength) {
     var template =
         '<tr class="album-view-song-item">'
@@ -62,27 +61,44 @@ var createSongRow = function(songNumber, songName, songLength) {
         + '</tr>';    
     
     var $row = $(template);
+    
+
+    var clickHandler = function(){              
+         if(this.innerHTML === playButtonTemplate){
+        
+            for(i = 0; i < songRows.length; i++){  
+                if(songRows[i].querySelector('.ion-pause') != null){
+                    songRows[i].firstChild.innerHTML = i+1;
+                    this.innerHTML = pauseButtonTemplate;
+                    return;
+                    }          
+            };        
+             this.innerHTML = pauseButtonTemplate;
+             
+         } else {
+             this.innerHTML = playButtonTemplate;
+         }
+    };
      
     var onHover = function(event){
-        console.log('setting play button template')
-        this.firstChild.innerHTML = playButtonTemplate;
-
+        if(this.firstChild.innerHTML === pauseButtonTemplate){
+            var currentSongNumber = songNumber
+                if(songNumber != currentSongNumber){
+                   this.firstChild.innerHTML = playButtonTemplate;
+                }
+            return;
+        }
+       this.firstChild.innerHTML = playButtonTemplate;
     };
+    
     var offHover = function(event){
-        console.log('setting template')
-        this.innerHTML = template;
+        if(this.firstChild.innerHTML === pauseButtonTemplate){
+            return;
+        }
+       this.innerHTML = template;
     };
     
-    var clickHandler = function(event){ 
-             
-    
-        this.innerHTML = pauseButtonTemplate;
-         console.log(this.innerHTML);
-       event.stopPropagation();
-    };
-    
-    
-    $row.find('.song-item-number').click(clickHandler);
+    $row.on('click','.song-item-number',clickHandler);
     $row.hover(onHover,offHover);
     return $row;
 };
