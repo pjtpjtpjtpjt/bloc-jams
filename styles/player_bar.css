@@ -122,7 +122,10 @@
     cursor: pointer;
     -webkit-transition: all 100ms ease-in-out;
         -moz-transition: all 100ms ease-in-out;
-            transition: all 100ms ease-in-out;        
+            transition: width 100ms ease-in-out,
+                        height 100ms ease-in-out,
+                        margin-top 100ms ease-in-out,
+                        margn-left 100ms ease-in-out;        
 }
 
 .seek-bar: hover .thumb {
@@ -167,7 +170,7 @@
     }
     
     .player-bar .main-controls,
-    .player-bar .volum {
+    .player-bar .volume {
         min-height: 3.5rem;
     }
     
