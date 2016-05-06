@@ -2,7 +2,7 @@
 
 A Bloc project used to learn frontend web development.
 
-##So isn't not really your creation is it?##
+##So this isn't really your creation is it?##
 
 A very good question!  Yes the majority of the code came from Bloc because it was their primary method for teaching. Even so, there is code that I created that's mixed in. And I'm proud of that code.
 
